@@ -11,13 +11,13 @@
 /*Custom properties*/
 :root {
     --dark-color: #2d2c2c;
-    --purple-solid: #550101;
-    --purple-transparent: rgb(255, 42, 42);
-    --purple-transparent-alt: rgba(79, 10, 10, 0.5);
-    --purple-light: #fb5075;
-    --yellow-solid: #ffd038;
-    --gradient-color: linear-gradient(to right, var(--yellow-solid), var(--purple-light));
-    --gradient-color-alt: linear-gradient(to right, var(--purple-light), var(--yellow-solid));
+    --red-solid: #550101;
+    --red-transparent: rgb(255, 42, 42);
+    --red-transparent-alt: rgba(79, 10, 10, 0.5);
+    --red-light: #ed4264 ;
+    --yellow-solid: #f7db90;
+    --gradient-color: linear-gradient(to right, var(--yellow-solid), var(--red-light));
+    --gradient-color-alt: linear-gradient(to right, var(--red-light), var(--yellow-solid));
 }
 
 /* Global styles */
@@ -47,6 +47,18 @@ section {
 
 /* Reusable styles */
 
+.btn {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem 3.4rem;
+    border: none;
+    border-radius: 10rem ;
+    display: inline-flex;
+    align-items: center;
+}
+
 .container {
     width: 100%;
     max-width: 120rem;
@@ -54,6 +66,10 @@ section {
     margin: 0 auto;
 }
 
+.form-btn {
+    margin-top: 2.5rem ;
+    cursor: pointer;
+}
 
 /* Header styles */
 
@@ -65,9 +81,14 @@ section {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: var(--purple-transparent);
+    background-color: var(--red-transparent);
     z-index: 100;
 }
+
+.header.active {
+    background-color: var(--red-solid);
+}
+
 
 /* Header nav styles */
 
@@ -107,7 +128,7 @@ section {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: var(--purple-solid);
+    background-color: var(--red-solid);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,4 +156,101 @@ section {
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 1rem;
+}
+
+/* Hero section styles */
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: url("../img/hero_background.jpg") center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+.hero::after{
+    content: '' ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    background-color: var(--red-transparent-alt);
+    z-index: -1;
+}
+
+.main-heading {
+    color: #fff;
+    line-height: 1;
+    text-shadow: 1px 1px 1rem rgba(0,0,0, 0,5);
+    margin-bottom: 2.5rem;
+}
+
+.title {
+    font-size: 4.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    font-size: 3.6rem;
+    font-weight: 300;
+    font-family: 'Courgette', cursive;
+}
+
+.btn-gradient {
+    background-image: var(--gradient-color-alt);
+}
+
+.btn-gradient:hover {
+    background-image: var(--gradient-color-alt);
+}
+
+.dots {
+    font-size: 2.4rem;
+    margin-left: 0.5rem;
+    opacity: 0.75;
+}
+
+/* Booking section styles */
+
+.booking {
+    background-image: var(--gradient-color-alt);
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-label {
+    display: block;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.input, .options {
+    outline: none;
+    border: none;
+    width: 100%;
+    min-height: 4rem;
+    padding: 1rem;
+    font-weight: bold;
+    color: #a5a5a5;
+    letter-spacing: 2px;
+    font-family: 'Open Sans', sans-serif;
+    /* resize: none; */
+}
+
+.btn-red {
+    background-color: var(--red-solid);
+}
+
+.btn-red:hover {
+    background-color: var(--red-transparent);
 }
